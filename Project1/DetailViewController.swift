@@ -13,11 +13,17 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       //carregando a imagem dentro das celulas
         if let imageToLoad = selectedImage{
             imageView.image = UIImage(named: imageToLoad)
         }
-
     }
-
+    //mostrar detalhes
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnTap = true
+    }
+    //ocultar detalhes
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.hidesBarsOnTap = false
+    }
 }
