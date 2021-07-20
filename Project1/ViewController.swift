@@ -9,9 +9,13 @@ import UIKit
 
 class ViewController: UITableViewController {
     var pictures = [String]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Storm Viewer"
+    
+        //colocando como true a topBar
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -22,12 +26,14 @@ class ViewController: UITableViewController {
             //Imagem para carregar
                 pictures.append(item)
         }
+            //colocando em ordem alfabetica
+            pictures = pictures.sorted()
       }
-            print(pictures)
     }
         //numero de linhas da tabela
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return pictures.count
+            pictures.count
+        
         }
     
     //numero de celulas
@@ -44,6 +50,7 @@ class ViewController: UITableViewController {
             vc.selectedImage = pictures[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
+        
     }
     
 }
