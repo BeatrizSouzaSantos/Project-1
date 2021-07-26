@@ -26,13 +26,13 @@ class ViewController: UITableViewController {
             //Imagem para carregar
                 pictures.append(item)
         }
-            //colocando em ordem alfabetica
+            //colocando em ordem crescente
             pictures = pictures.sorted()
       }
     }
         //numero de linhas da tabela
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            pictures.count
+            return pictures.count
         
         }
     

@@ -17,8 +17,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //colocando o nome da image na topBar
-        title = selectedImage
-        title = "This image is \(selectedImage)"
+        title = "Picture \(selectedImage) of \(totalPictures)"
         //arrumando o botao voltar
         navigationItem.largeTitleDisplayMode = .never
        //carregando a imagem dentro das celulas
@@ -34,6 +33,7 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.hidesBarsOnTap = false
     }
+    
 
     
 
